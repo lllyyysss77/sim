@@ -1,0 +1,771 @@
+# Instincts generated from https://github.com/lllyyysss77/sim
+# Generated: 2026-05-12T20:33:45.471Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: sim-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, improvement
+
+## Evidence
+
+- 100 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(copilot): consolidate usage limit validation (#1763), improvement(chat): increase max files to 15 and resolve workflow variables in webhook execution (#1764)
+
+---
+id: sim-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Commit Length
+
+## Action
+
+Write moderate-length commit messages (~72 characters)
+
+## Evidence
+
+- Average commit message length: 72 chars
+- Based on 100 commits
+
+---
+id: sim-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: sim-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: sim-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: sim-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: sim-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: sim-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Test Mocking
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: vi.mock
+- Consistent across test files
+
+---
+id: sim-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: no
+
+---
+id: sim-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: **/types.ts, migrations/*, **/schema.*
+
+---
+id: sim-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~17x per month
+- Files: apps/sim/app/api/__test-utils__/*, apps/sim/app/api/chat/[identifier]/*, apps/sim/app/api/files/*
+
+---
+id: sim-workflow-test-driven-development
+trigger: "when adding new functionality"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Test Driven Development
+
+## Action
+
+Follow the test-driven-development workflow:
+1. Write failing test
+2. Implement code to pass test
+3. Refactor if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: **/*.test.*, **/*.spec.*, src/**/*
+
+---
+id: sim-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: src/**/*
+
+---
+id: sim-workflow-add-or-update-database-table
+trigger: "when doing add or update database table"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update Database Table
+
+## Action
+
+Follow the add-or-update-database-table workflow:
+1. Create or modify a migration SQL file in packages/db/migrations/
+2. Update migration metadata in packages/db/migrations/meta/
+3. Update TypeScript schema in packages/db/schema.ts
+4. Update application code to use new/changed table
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: packages/db/migrations/*.sql, packages/db/migrations/meta/*.json, packages/db/schema.ts
+
+---
+id: sim-workflow-add-or-enhance-api-endpoint
+trigger: "when doing add or enhance api endpoint"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Enhance Api Endpoint
+
+## Action
+
+Follow the add-or-enhance-api-endpoint workflow:
+1. Create or update route file in apps/sim/app/api/**/route.ts
+2. Optionally add or update test in apps/sim/app/api/**/route.test.ts
+3. Update related service/lib files in apps/sim/lib/**
+4. Update frontend or store logic if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: apps/sim/app/api/**/route.ts, apps/sim/app/api/**/route.test.ts, apps/sim/lib/**
+
+---
+id: sim-workflow-add-or-update-tool-or-trigger
+trigger: "when doing add or update tool or trigger"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update Tool Or Trigger
+
+## Action
+
+Follow the add-or-update-tool-or-trigger workflow:
+1. Create or update block file in apps/sim/blocks/blocks/*.ts
+2. Create or update tool implementation in apps/sim/tools/{integration}/
+3. Register tool in apps/sim/tools/registry.ts
+4. Create or update trigger in apps/sim/triggers/{integration}/
+5. Register trigger in apps/sim/triggers/registry.ts
+6. Update docs in apps/docs/content/docs/en/tools/{integration}.mdx
+7. Update i18n translations if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: apps/sim/blocks/blocks/*.ts, apps/sim/tools/**, apps/sim/tools/registry.ts
+
+---
+id: sim-workflow-add-or-update-i18n-translations
+trigger: "when doing add or update i18n translations"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update I18n Translations
+
+## Action
+
+Follow the add-or-update-i18n-translations workflow:
+1. Update language-specific docs in apps/docs/content/docs/{lang}/**
+2. Update translation lock file apps/docs/i18n.lock
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: apps/docs/content/docs/*/**/*.mdx, apps/docs/i18n.lock
+
+---
+id: sim-workflow-feature-development-with-ui-and-state
+trigger: "when doing feature development with ui and state"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Feature Development With Ui And State
+
+## Action
+
+Follow the feature-development-with-ui-and-state workflow:
+1. Implement or update UI components in apps/sim/app/workspace/** or apps/sim/components/ui/**
+2. Update or add hooks in apps/sim/hooks/**
+3. Update or add state/store files in apps/sim/stores/**
+4. Update backend logic in apps/sim/lib/** or apps/sim/background/**
+5. Update API routes if needed
+6. Update documentation if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: apps/sim/app/workspace/**, apps/sim/components/ui/**, apps/sim/hooks/**
+
+---
+id: sim-workflow-add-or-update-workflow-block-or-subblock
+trigger: "when doing add or update workflow block or subblock"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update Workflow Block Or Subblock
+
+## Action
+
+Follow the add-or-update-workflow-block-or-subblock workflow:
+1. Implement or update block/subblock component in apps/sim/app/workspace/[workspaceId]/w/[workflowId]/components/workflow-block/components/sub-block/components/
+2. Update workflow block registry or types
+3. Update stores for subblocks
+4. Update supporting hooks or utils
+5. Update backend logic if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: apps/sim/app/workspace/[workspaceId]/w/[workflowId]/components/workflow-block/components/sub-block/components/**, apps/sim/blocks/blocks/*.ts, apps/sim/blocks/types.ts
+
+---
+id: sim-naming-files-camelCase
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Naming Files CamelCase
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- apps/sim/app/api/files/authorization.ts
+
+---
+id: sim-naming-functions-camelCase
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Naming Functions CamelCase
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: sim-naming-classes-PascalCase
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Naming Classes PascalCase
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: sim-naming-constants-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Naming Constants SCREAMING_SNAKE_CASE
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: sim-import-alias
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Import Alias
+
+## Action
+
+Use alias import style
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: sim-export-named
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Export Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: sim-test-vitest-pattern
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Test Vitest Pattern
+
+## Action
+
+Use vitest as the test framework and name test files with *.test.ts
+
+## Evidence
+
+- Pattern in testing.framework
+- Pattern in testing.filePattern
+- apps/sim/app/api/files/authorization.test.ts
+
+---
+id: sim-test-mocking-vi-mock
+trigger: "When mocking dependencies in tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Test Mocking Vi Mock
+
+## Action
+
+Use vi.mock for mocking
+
+## Evidence
+
+- Pattern in testing.mockingStyle
+
+---
+id: sim-test-unit-integration
+trigger: "When planning test coverage"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Test Unit Integration
+
+## Action
+
+Write both unit and integration tests
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: sim-git-conventional-commits
+trigger: "When writing a commit message"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Git Conventional Commits
+
+## Action
+
+Use conventional commit prefixes: feat, fix, improvement, chore, test
+
+## Evidence
+
+- fix(copilot): consolidate usage limit validation (#1763)
+- improvement(chat): increase max files to 15 and resolve workflow variables in webhook execution (#1764)
+- feat(files): added file manager table, enforce permissions for viewing files (#1766)
+
+---
+id: sim-git-commit-length
+trigger: "When composing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Git Commit Length
+
+## Action
+
+Keep commit message subject around 72 characters
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: sim-workflow-add-or-update-database-table
+trigger: "When someone wants to add a new table or update an existing one in the database"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update Database Table
+
+## Action
+
+Create/modify migration SQL in packages/db/migrations/, update meta, update schema.ts, update application code
+
+## Evidence
+
+- Workflow: add-or-update-database-table
+- Pattern in files: packages/db/migrations/*.sql, packages/db/migrations/meta/*.json, packages/db/schema.ts
+
+---
+id: sim-workflow-add-or-enhance-api-endpoint
+trigger: "When someone wants to expose new backend functionality or modify an API route"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Enhance Api Endpoint
+
+## Action
+
+Create/update route in apps/sim/app/api/**/route.ts, add/update test, update related lib, update frontend/store if needed
+
+## Evidence
+
+- Workflow: add-or-enhance-api-endpoint
+- Pattern in files: apps/sim/app/api/**/route.ts, apps/sim/app/api/**/route.test.ts, apps/sim/lib/**
+
+---
+id: sim-workflow-add-or-update-tool-or-trigger
+trigger: "When someone wants to add a new integration or extend an existing one"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update Tool Or Trigger
+
+## Action
+
+Create/update block in apps/sim/blocks/blocks/*.ts, tool in apps/sim/tools/{integration}/, register in registry.ts, update docs and i18n if needed
+
+## Evidence
+
+- Workflow: add-or-update-tool-or-trigger
+- Pattern in files: apps/sim/blocks/blocks/*.ts, apps/sim/tools/**, apps/sim/tools/registry.ts, apps/sim/triggers/**, apps/sim/triggers/registry.ts, apps/docs/content/docs/en/tools/*.mdx
+
+---
+id: sim-workflow-add-or-update-i18n-translations
+trigger: "When someone wants to localize new features or update translations"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update I18n Translations
+
+## Action
+
+Update docs in apps/docs/content/docs/{lang}/**, update apps/docs/i18n.lock
+
+## Evidence
+
+- Workflow: add-or-update-i18n-translations
+- Pattern in files: apps/docs/content/docs/*/**/*.mdx, apps/docs/i18n.lock
+
+---
+id: sim-workflow-feature-development-with-ui-and-state
+trigger: "When someone wants to add a major feature (e.g., live cursor, import/export, cost breakdown, custom tools, collaboration)"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Workflow Feature Development With Ui And State
+
+## Action
+
+Implement/update UI in apps/sim/app/workspace/** or apps/sim/components/ui/**, update hooks, stores, backend logic, API routes, docs as needed
+
+## Evidence
+
+- Workflow: feature-development-with-ui-and-state
+- Pattern in files: apps/sim/app/workspace/**, apps/sim/components/ui/**, apps/sim/hooks/**, apps/sim/stores/**, apps/sim/lib/**, apps/sim/background/**
+
+---
+id: sim-workflow-add-or-update-workflow-block-or-subblock
+trigger: "When someone wants to extend workflow builder capabilities (e.g., new trigger types, schedule config, input mapping)"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/sim
+---
+
+# Sim Workflow Add Or Update Workflow Block Or Subblock
+
+## Action
+
+Implement/update block/subblock in workflow-block/components/sub-block/components/, update registry/types, stores, hooks, backend as needed
+
+## Evidence
+
+- Workflow: add-or-update-workflow-block-or-subblock
+- Pattern in files: apps/sim/app/workspace/[workspaceId]/w/[workflowId]/components/workflow-block/components/sub-block/components/**, apps/sim/blocks/blocks/*.ts, apps/sim/blocks/types.ts, apps/sim/stores/workflows/subblock/**, apps/sim/hooks/**, apps/sim/lib/workflows/**
+
